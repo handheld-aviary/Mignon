@@ -12,6 +12,8 @@ fs.readdir("./events/", (err, files) => {
 
 	files.forEach(file => {
 
+		console.log("So I ended up doing the YMCA");
+
 		let eventFunction = require(`./events/${file}`);
 		let eventName = file.split(".")[0];
 
