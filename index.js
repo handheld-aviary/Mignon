@@ -29,7 +29,7 @@ client.on("message", (message) => {
 
 	if (message.content.indexOf(config.prefix) !== 0) return;
 
-	const args = message.content.slice(prefix.length).trim().split(" ");
+	const args = message.content.slice(config.prefix.length).trim().split(" ");
 	const command = args.shift().toLowerCase();
 
 	if (command.indexOf("/") !== -1 || command.indexOf("\\") !== -1 || command.indexOf("..") !== -1) return message.channel.send("Please remove all slashes and backslashes from your command "+message.member);
