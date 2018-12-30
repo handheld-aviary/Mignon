@@ -12,8 +12,6 @@ fs.readdir("./events/", (err, files) => {
 
 	files.forEach(file => {
 
-		console.log("So I ended up doing the YMCA");
-
 		let eventFunction = require(`./events/${file}`);
 		let eventName = file.split(".")[0];
 
@@ -35,9 +33,6 @@ client.on("message", (message) => {
 	const command = args.shift().toLowerCase();
 
 	if (command.indexOf("/") !== -1 || command.indexOf("\\") !== -1 || command.indexOf("..") !== -1) return message.channel.send("Please remove all slashes and backslashes from your command "+message.member);
-
-	const args = message.content.slice(prefix.length).trim().split(" ");
-	const command = args.shift().toLowerCase();
 
 	try {
 
