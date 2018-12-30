@@ -30,6 +30,9 @@ client.on("message", (message) => {
 	if (message.content.indexOf(config.prefix) !== 0) return;
 	if (command.indexOf("/") !== -1 || command.indexOf("\\") !== -1 || command.indexOf("..") !== -1) return message.channel.send("Please remove all slashes and backslashes from your command "+message.member);
 
+	const args = message.content.slice(prefix.length).trim().split(" ");
+	const command = args.shift().toLowerCase();
+
 	try {
 
 		let commandFile = require("./commands/" + command + ".js");
